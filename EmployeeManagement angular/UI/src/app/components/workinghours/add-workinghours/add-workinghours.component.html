@@ -1,0 +1,37 @@
+<div class="container my-5">
+    <h1 class="mb-3">Add New Time According to Designation</h1>
+
+    <div class="row">
+        <div class="col-6">
+            <form #form="ngForm" (ngSubmit)="addWorkingHours()">
+                <div class="mb-3">
+                    <label for="designation" class="form-label">Designation</label>
+                    <input type="text" class="form-control" id="designation"
+                    name="designation" [(ngModel)]="addWorkingHoursRequest.designation">
+                </div>
+                <div class="mb-3">
+                    <label for="from" class="form-label">From Time</label>
+                    <input type="time" class="form-control" id="from"
+                    name="from" [(ngModel)]="addWorkingHoursRequest.from">
+                </div>
+                <div class="mb-3">
+                    <label for="to" class="form-label">To</label>
+                    <input type="time" class="form-control" id="to"
+                    name="to" [(ngModel)]="addWorkingHoursRequest.to">
+                </div>
+                <div class="mb-3">
+                    <label for="totalTime" class="form-label">Total Time</label>
+                    <input type="text" class="form-control" id="totalTime"
+                    name="totalTime" [(ngModel)]="addWorkingHoursRequest.totalTime">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Submit</button>
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+

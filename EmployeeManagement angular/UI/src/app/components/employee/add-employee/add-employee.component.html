@@ -1,0 +1,48 @@
+<div class="container my-5">
+    <h1 class="mb-3">Add New Employee</h1>
+
+    <div class="row">
+        <div class="col-6">
+            <form #form="ngForm" (ngSubmit)="addEmployee()">
+                <div class="mb-3">
+                    <label for="empId" class="form-label">Employee Id</label>
+                    <input type="text" class="form-control" id="empId"
+                    name="empId" [(ngModel)]="addEmployeeRequest.empId" required >
+                </div>
+                <div class="mb-3">
+                    <label for="empName" class="form-label">Employee Name</label>
+                    <input type="text" class="form-control" id="empName"
+                    name="empName" [(ngModel)]="addEmployeeRequest.empName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" id="phone"
+                    name="phone" [(ngModel)]="addEmployeeRequest.phone" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email"
+                    name="email" [(ngModel)]="addEmployeeRequest.email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address"
+                    name="address" [(ngModel)]="addEmployeeRequest.address" required>
+                </div>
+                <div class="mb-3">
+                    <label for="designation" class="form-label">Designation</label>
+                    <input type="text" class="form-control" id="designation"
+                    name="address" [(ngModel)]="addEmployeeRequest.designation" required>
+                </div>
+                <div class="mb-3">
+                    <label for="salaryGrade" class="form-label">Salary Grade</label>
+                    <input type="text" class="form-control" id="salaryGrade"
+                    name="salaryGrade" [(ngModel)]="addEmployeeRequest.salaryGrade" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

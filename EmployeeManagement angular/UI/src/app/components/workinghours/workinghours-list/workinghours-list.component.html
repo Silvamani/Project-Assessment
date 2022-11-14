@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" >Working  Time Details</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="h">Home</a>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-success" routerLink="add">Add New Time</button>
+          </li>
+        
+
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+  <br>
+  <div class="search-time" >
+    <input type="text" name="search"[(ngModel)]="searchText" placeholder="search time">
+  </div>
+  <div class="container my-5">
+    <div class="col text-center p-2 mb-3 bg-light">
+        <span class="fs-3">List Of Time Available according designation</span>
+    </div>
+
+    <table class="table table-bordered border-primary" *ngIf="workingmanagement && workingmanagement.length>0">
+        <thead class="thead-dark">
+            <tr>
+                <th>Serial No</th>
+                <th>Designation</th>
+                <th>
+                    From Time</th>
+                <th>To Time</th>
+                <th>Total Time</th>
+               
+                <th>Action</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let workingmanagements of workingmanagement | filter:searchText">
+                <td>{{workingmanagements.id}}</td>
+                <td>{{workingmanagements.designation}}</td>
+                <td>{{workingmanagements.from}}</td>
+                <td>{{workingmanagements.to}}</td>
+                <td>{{workingmanagements.totalTime}}</td>
+               
+                <td><a [routerLink]="['/time/time','edit',workingmanagements.id]">View Details and Edit</a></td>
+               
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="!workingmanagement || workingmanagement.length<=0">No Item Found</p>
+  </div>
+
+
